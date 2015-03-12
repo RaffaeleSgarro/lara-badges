@@ -13,7 +13,7 @@ public class RandomBadgeFactory implements BadgeFactory {
     }
 
     private Badge randomBadge() {
-        return new Badge(randomTheme(), randomLetter());
+        return new SimpleBadge(randomTheme(), randomLetter());
     }
 
     private Theme randomTheme() {

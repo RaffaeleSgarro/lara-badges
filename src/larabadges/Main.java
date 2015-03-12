@@ -7,8 +7,13 @@ import java.awt.print.PrinterJob;
 
 public class Main {
     public static void main(String... args) throws Exception{
-        BadgesPrintable badgesPrintable = new BadgesPrintable(new RandomBadgeFactory(1));
-        //BadgesPrintable badgesPrintable = new BadgesPrintable(new SequenceBadgeFactory(Color.RED, Color.WHITE, 1, 51));
+
+        RandomBadgeFactory randomBadgeFactory = new RandomBadgeFactory(1);
+        SequenceBadgeFactory sequenceBadgeFactory = new SequenceBadgeFactory(Color.RED, Color.WHITE, 1, 51);
+        HtmlBadgeFactory htmlBadgeFactory = new HtmlBadgeFactory();
+
+        BadgesPrintable badgesPrintable = new BadgesPrintable(htmlBadgeFactory);
+
         PrinterJob job = PrinterJob.getPrinterJob();
         //if (job.printDialog()) {
         PageFormat pf = job.defaultPage();

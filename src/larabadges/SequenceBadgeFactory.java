@@ -31,7 +31,7 @@ public class SequenceBadgeFactory implements BadgeFactory {
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLUMNS; col++) {
                 if (counter <= endInclusive) {
-                    page.setBadge(row, col, new Badge(new Theme(backgroundColor, foregroundColor), Integer.toString(counter)));
+                    page.setBadge(row, col, new SimpleBadge(new Theme(backgroundColor, foregroundColor), Integer.toString(counter)));
                 }
                 counter++;
             }
