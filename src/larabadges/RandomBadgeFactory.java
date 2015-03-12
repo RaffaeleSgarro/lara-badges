@@ -17,16 +17,22 @@ public class RandomBadgeFactory implements BadgeFactory {
     }
 
     private Theme randomTheme() {
+        // Palette http://www.colourlovers.com/fashion/trends/street-fashion/7896/Floral_Much
 
-        Color[] colors = {
-                new Color(0x791718)
-                , new Color(0xFE3942)
-                , new Color(0xFF5888)
-                , new Color(0xD9B7B6)
-                , new Color(0x3B3436)
+        Theme[] themes = {
+                  theme(0xEA3556, 0xFFFFFF)
+                , theme(0x61D2D6, 0xFFFFFF)
+                , theme(0xEDE5E2, 0x808080)
+                , theme(0xED146F, 0xFFFFFF)
+                , theme(0xEDDE45, 0x808080)
+                , theme(0x9BF0E9, 0x808080)
         };
 
-        return new Theme(colors[random.nextInt(colors.length - 1)], Color.WHITE);
+        return themes[random.nextInt(themes.length - 1)];
+    }
+    
+    private Theme theme(int background, int foreground) {
+        return new Theme(new Color(background), new Color(foreground));
     }
 
     private String randomLetter() {
