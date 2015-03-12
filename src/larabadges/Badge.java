@@ -7,15 +7,13 @@ public class Badge {
 
     private final Theme theme;
     private final String text;
-    private final Rectangle2D cell;
 
-    public Badge(Theme theme, String text, Rectangle2D cell) {
+    public Badge(Theme theme, String text) {
         this.theme = theme;
         this.text = text;
-        this.cell = cell;
     }
 
-    public void paint(Graphics2D ctx) {
+    public void paint(Graphics2D ctx, Rectangle2D cell) {
         ctx.setColor(theme.getBackground());
         ctx.fill(cell);
 

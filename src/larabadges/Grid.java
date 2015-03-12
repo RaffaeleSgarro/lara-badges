@@ -9,7 +9,7 @@ import java.util.List;
 /**
 * Created by admin on 12/03/2015.
 */
-public class Grid implements Iterable<Rectangle2D> {
+public class Grid implements Iterable<Cell> {
 
     private final int rows;
     private final int columns;
@@ -27,15 +27,15 @@ public class Grid implements Iterable<Rectangle2D> {
     }
 
     @Override
-    public Iterator<Rectangle2D> iterator() {
-        List<Rectangle2D> cells = new ArrayList<>();
+    public Iterator<Cell> iterator() {
+        List<Cell> cells = new ArrayList<>();
 
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < columns; col++) {
                 double x = col * (cellWidth + horizontalGap);
                 double y = row * (cellHeight + verticalGap);
                 Rectangle2D rectangle = new Rectangle.Double(x, y, cellWidth, cellHeight);
-                cells.add(rectangle);
+                cells.add(new Cell(row, col, rectangle));
             }
         }
 
