@@ -1,13 +1,32 @@
 <html>
 <head>
-    <title>Simple badge</title>
+    <title>Badge template</title>
     <style>
-        body {
-          background-color: yellow;
+        body, div {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-family: Arial;
+          font-size: 10pt;
         }
+
+        .badge {
+          width: 100%;
+          height: 54mm;
+          text-align: center;
+          background: {{background}};
+          color: {{foreground}};
+        }
+
+        .text {
+          padding-top: 20mm;
+        }
+
     </style>
 </head>
 <body>
-It works!!!
+<div class="badge">
+    <div class="text">{{text}}</div>
+</div>
 </body>
 </html>
