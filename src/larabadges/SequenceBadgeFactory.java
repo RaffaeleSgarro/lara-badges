@@ -21,7 +21,7 @@ public class SequenceBadgeFactory implements BadgeFactory {
 
     @Override
     public boolean hasPage(int pageIndex) {
-        return pageIndex <= (endInclusive - startInclusive + 1) / (ROWS * COLUMNS);
+        return pageIndex < Math.ceil(((double) endInclusive - startInclusive + 1) / (ROWS * COLUMNS));
     }
 
     @Override
