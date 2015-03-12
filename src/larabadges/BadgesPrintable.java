@@ -33,12 +33,14 @@ public class BadgesPrintable implements Printable {
         if (badgeFactory.hasPage(pageIndex)) {
             Page page = badgeFactory.getPage(pageIndex);
             for (Cell cell : grid) {
-                AffineTransform cellTransform = new AffineTransform(transform);
-                Rectangle2D rect = cell.getRectangle();
-                cellTransform.translate(rect.getX(), rect.getY());
-                ctx.setTransform(cellTransform);
-                Badge badge = page.getBadgeAt(cell.getRowIndex(), cell.getColumnIndex());
-                badge.paint(ctx, new Rectangle.Double(0, 0, rect.getWidth(), rect.getHeight()));
+                if (page.hasBadge(cell.getRowIndex(), cell.getColumnIndex())) {
+                    AffineTransform cellTransform = new AffineTransform(transform);
+                    Rectangle2D rect = cell.getRectangle();
+                    cellTransform.translate(rect.getX(), rect.getY());
+                    ctx.setTransform(cellTransform);
+                    Badge badge = page.getBadgeAt(cell.getRowIndex(), cell.getColumnIndex());
+                    badge.paint(ctx, new Rectangle.Double(0, 0, rect.getWidth(), rect.getHeight()));
+                }
             }
             return PAGE_EXISTS;
         } else {
