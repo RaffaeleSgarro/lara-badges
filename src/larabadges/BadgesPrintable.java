@@ -39,7 +39,9 @@ public class BadgesPrintable implements Printable {
                     cellTransform.translate(rect.getX(), rect.getY());
                     ctx.setTransform(cellTransform);
                     Badge badge = page.getBadgeAt(cell.getRowIndex(), cell.getColumnIndex());
-                    badge.paint(ctx, new Rectangle.Double(0, 0, rect.getWidth(), rect.getHeight()));
+                    Rectangle2D.Double badgeSize = new Rectangle.Double(0, 0, rect.getWidth(), rect.getHeight());
+                    ctx.setClip(badgeSize);
+                    badge.paint(ctx, badgeSize);
                 }
             }
             return PAGE_EXISTS;
