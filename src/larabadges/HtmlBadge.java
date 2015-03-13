@@ -22,6 +22,7 @@ public class HtmlBadge implements Badge {
 
             Graphics2DRenderer renderer = new Graphics2DRenderer();
             renderer.setDocument(document, "");
+            renderer.getSharedContext().setDPI(72);
 
             int width = (int) (cell.getWidth() / scaleFactor);
             int height = (int) (cell.getHeight() / scaleFactor);
