@@ -7,26 +7,29 @@
           padding: 0;
           border: 0;
           font-family: Arial;
-          font-size: 30pt;
         }
 
         .badge {
-          width: 100%;
+          display: table-cell;
+          width: 85mm;
           height: 54mm;
           text-align: center;
+          vertical-align: middle;
           background: {{background}};
           color: {{foreground}};
+          font-size: 50pt;
         }
 
         .text {
-          padding-top: 15mm;
         }
 
     </style>
 </head>
 <body>
 <div class="badge">
-    <div class="text">{{text}}</div>
+    <div class="content">
+        <div class="text">{{text}}</div>
+    </div>
 </div>
 </body>
 </html>
