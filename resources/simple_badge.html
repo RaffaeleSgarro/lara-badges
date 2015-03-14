@@ -20,16 +20,49 @@
           font-size: 50pt;
         }
 
-        .text {
+        .edges {
+          position: relative;
+          z-index: 1;
+          width: 85mm;
+          height: 54mm;
+          font-size: 6pt;
+        }
+
+        .top-left {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .top-right {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        .bottom-right {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+
+        .bottom-left {
+          position: absolute;
+          bottom: 0;
+          left: 0;
         }
 
     </style>
 </head>
 <body>
-<div class="badge">
-    <div class="content">
-        <div class="text">{{text}}</div>
+    <div class="edges">
+        <div class="top-left">Top Left</div>
+        <div class="top-right">Top Right</div>
+        <div class="bottom-right">Bottom Right</div>
+        <div class="bottom-left">Bottom Left</div>
+        <div class="badge">
+            <div class="text">{{text}}</div>
+        </div>
     </div>
-</div>
 </body>
 </html>
